@@ -9,7 +9,11 @@ head
   link(rel='stylesheet', href='stylesheets/style.css')
   title Chat
 body
-  include navbar
+  #app
+    include navbar
+    
+    main.container
+      block content
   
-  div.container
-    block content
+  script(src='js/vue.js')
+  script(src='js/navbar.js')

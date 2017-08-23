@@ -1,8 +1,8 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var MongoStore = require('connect-mongo')(session);
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 var app = express();
 
 var port = process.env.PORT || 3000;
@@ -32,6 +32,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Serve static files
 app.use(express.static(__dirname + '/public'));
+app.use('/scripts', express.static(__dirname + '/node_modules/vue/dist/'));
 
 // View engine
 app.set('view engine', 'pug');

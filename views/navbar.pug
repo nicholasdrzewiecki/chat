@@ -11,3 +11,16 @@ nav.nav
         a.nav-list-link(href='/register') Register
         li.nav-list-item
           a.nav-list-link(href='/login') Log in
+    li.nav-list-item.mobile
+      a.nav-list-link(href='#', @click='active = !active') Menu
+      ul.nav-dropdown(:class='{ active: active }')
+        if loggedIn
+          li.nav-dropdown-item
+            a.nav-dropdown-link(href='/account') Account
+            li.nav-dropdown-item
+              a.nav-dropdown-link(href='/logout') Log out
+        else
+          li.nav-dropdown-item
+            a.nav-dropdown-link(href='/register') Register
+            li.nav-dropdown-item
+              a.nav-dropdown-link(href='/login') Log in
