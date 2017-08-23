@@ -1,0 +1,218 @@
+* {
+  box-sizing: inherit;
+}
+
+*:after, *:before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f7;
+  color: #72767d;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  font-family: "Hind Vadodara", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: inherit;
+  font-family: inherit;
+  font-weight: 500;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+/* Navigation */
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 4rem;
+  padding: 0 2rem;
+  margin-bottom: 15px;
+}
+
+.nav a {
+  transition: 0.2s ease-in-out;
+}
+
+.nav a:hover {
+  color: #1a1a1a;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+}
+
+.nav-list-item {
+  position: relative;
+}
+
+.nav-list-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.nav-list-link {
+  vertical-align: middle;
+}
+
+.nav-dropdown {
+  display: block;
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+  min-width: 220px;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: right top;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.25, 1);
+}
+
+.nav-dropdown:before {
+  position: absolute;
+  top: -0.5rem;
+  right: 1rem;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #fff;
+  content: "";
+}
+
+.active {
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-dropdown-item:not(:last-child) {
+  padding-bottom: 1rem;
+}
+
+.nav-dropdown-link {
+  color: #585858;
+}
+
+
+/* Forms */
+
+.form-container {
+  color: #444;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.form legend {
+  font-size: 2rem;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto 2rem;
+}
+
+.form input {
+  background-color: #f1f1f1;
+  border: none;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.form input[type=submit] {
+  background-color: #448aff;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.form input[type=submit]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 0 rgba(43, 113, 230, 1);
+}
+
+.form input:not(:last-child) {
+  margin: 0 0 1rem;
+}
+
+.form-footer {
+  text-align: center;
+  margin: 1rem;
+}
+
+.form-footer a {
+  color: #448aff;
+  transition: 0.2s ease-in-out;
+}
+
+.form-footer a:hover {
+  color: #2B71E6
+}
+
+@media screen and (max-width: 480px) {
+  .form {
+    width: 100%;
+  }
+}
+
+
+/* Box */
+
+.box {
+  background: white;
+  padding: 2rem;
+}
+
+.error {
+  background-color: #F16E64;
+  color: white;
+}
+
+
+/* Account */
+
+.data-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.data-item dt {
+  font-weight: bold;
+}

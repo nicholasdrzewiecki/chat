@@ -1,0 +1,13 @@
+nav.nav
+  a.nav-logo(href='/') Chat
+  ul.nav-list
+    if loggedIn
+      li.nav-list-item
+        a.nav-list-link(href='/account') Account
+        li.nav-list-item
+          a.nav-list-link(href='/logout') Log out
+    else
+      li.nav-list-item
+        a.nav-list-link(href='/register') Register
+        li.nav-list-item
+          a.nav-list-link(href='/login') Log in
