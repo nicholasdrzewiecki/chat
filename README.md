@@ -20,3 +20,7 @@ https://nodejs.org/en/
 2. type "npm install" to install the dependencies
 3. type "node app.js" to start the server
 4. open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Demo
+
+[https://nicholas-chat.herokuapp.com/](https://nicholas-chat.herokuapp.com/)
