@@ -93,4 +93,17 @@ router.get('/account', middleware.requiresLogin, function(request, response, nex
   });
 });
 
+router.get('/chat', middleware.requiresLogin, function(request, response, next) {
+  User.find(function(error, result) {
+    if (error) {
+      return next(error);
+    } else {
+      return response.render('chat', {
+        title: 'Chat',
+        users: result
+      });
+    }
+  });
+});
+
 module.exports = router;

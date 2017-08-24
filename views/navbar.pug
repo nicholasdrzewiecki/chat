@@ -3,9 +3,11 @@ nav.nav
   ul.nav-list
     if loggedIn
       li.nav-list-item
-        a.nav-list-link(href='/account') Account
+        a.nav-list-link(href='/chat') Chat
         li.nav-list-item
-          a.nav-list-link(href='/logout') Log out
+          a.nav-list-link(href='/account') Account
+          li.nav-list-item
+            a.nav-list-link(href='/logout') Log out
     else
       li.nav-list-item
         a.nav-list-link(href='/register') Register
@@ -16,9 +18,11 @@ nav.nav
       ul.nav-dropdown(:class='{ active: active }')
         if loggedIn
           li.nav-dropdown-item
-            a.nav-dropdown-link(href='/account') Account
+            a.nav-dropdown-link(href='/chat') Chat
             li.nav-dropdown-item
-              a.nav-dropdown-link(href='/logout') Log out
+              a.nav-dropdown-link(href='/account') Account
+              li.nav-dropdown-item
+                a.nav-dropdown-link(href='/logout') Log out
         else
           li.nav-dropdown-item
             a.nav-dropdown-link(href='/register') Register
