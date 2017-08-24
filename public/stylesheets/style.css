@@ -93,17 +93,27 @@ ul {
   flex-direction: column;
   align-items: center;
   background-color: #2f3136;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .user {
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.user:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
   width: 100%;
   cursor: pointer;
 }
 
 .user:not(:last-child) {
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .status {
@@ -289,7 +299,6 @@ ul {
   .flex-wrapper {
     flex-direction: column;
   }
-
   .user-list {
     flex: 0 0 auto;
   }
