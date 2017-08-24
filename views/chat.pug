@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  .chat-wrapper
+    .flex-wrapper
+      .user-list
+        each user in users
+          .user 
+            span.status
+            |  #{user.username}
+              
