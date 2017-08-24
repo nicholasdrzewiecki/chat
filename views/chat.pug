@@ -8,4 +8,13 @@ block content
           .user 
             span.status
             |  #{user.username}
+      .messages
+        .chat-body
+          ul.message-list
+        .chat-footer
+          form.form-chat
+            input(type='text', placeholder='Message', name='message')
+            input(type='submit', role='button', value='Send')
+            
+    
               

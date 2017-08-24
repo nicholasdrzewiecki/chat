@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6, p {
 ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 
@@ -123,6 +124,20 @@ ul {
   height: 10px;
   width: 10px;
   margin-right: 0.25rem;
+}
+
+.messages {
+  flex: 1 0;
+  overflow-y: scroll;
+}
+
+.chat-body {
+  padding: 2rem;
+}
+
+.chat-footer {
+  position: fixed;
+  bottom: 0;
 }
 
 
@@ -270,6 +285,34 @@ ul {
 
 .form-footer a:hover {
   color: #2B71E6
+}
+
+.form-chat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+  margin: 0;
+  width: 400px;
+}
+
+.form-chat input {
+  background-color: white;
+  border: none;
+  outline: none;
+  font-family: "Hind Vadodara", sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 75%;
+}
+
+.form-chat input[type=submit] {
+  background-color: #448aff;
+  box-shadow: none;
+  color: white;
+  cursor: pointer;
+  width: 25%;
+  transition: 0.2s ease-in-out;
 }
 
 
