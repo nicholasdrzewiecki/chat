@@ -4,10 +4,6 @@ block content
   .chat-wrapper
     .flex-wrapper
       .user-list
-        each user in users
-          .user 
-            span.status
-            |  #{user.username}
       .messages
         .chat-body
           ul.message-list
@@ -15,6 +11,3 @@ block content
           form.form-chat
             input(type='text', placeholder='Message', name='message')
             input(type='submit', role='button', value='Send')
-            
-    
-              

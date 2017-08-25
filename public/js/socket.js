@@ -6,6 +6,6 @@ $(function() {
     return false;
   });
   socket.on('chat message', function(message) {
-    $('.message-list').append($('<li>').text(message));
+    $('.message-list').append($('<li>#{username}').text(message));
   });
 });

@@ -8,48 +8,39 @@ var port = process.env.PORT || 3000;
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
 
-// Mongoose connection
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/chat");
-var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error"));
+var database = mongoose.connection;
+database.on("error", console.error.bind(console, "connection error"));
 
-// Session middleware
 app.use(session({
-  secret: "secret",
+  secret: "qwerty",
   resave: true,
   saveUninitialized: false,
-  store: new MongoStore({mongooseConnection: db})
+  store: new MongoStore({mongooseConnection: database})
 }));
 
-// Make user id available in templates
 app.use(function(request, response, next) {
   response.locals.loggedIn = request.session.userId;
   next();
 });
 
-// Parse requests
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-// Serve static files
 app.use(express.static(__dirname + "/public"));
 
-// View engine
 app.set("view engine", "pug");
-app.set("views", __dirname + "/views"); // Where to find pug templates
+app.set("views", __dirname + "/views");
 
-// Routes
-var routes = require("./routes/index");
+var routes = require("./routes/index")(io);
 app.use("/", routes);
 
-// 404
 app.use(function(request, response, next) {
   var error = new Error("File Not Found");
   error.status = 404;
   next(error);
 });
 
-// Error handler
 app.use(function(error, request, response, next) {
   response.status(error.status || 500);
   response.render("error", {
@@ -59,14 +50,6 @@ app.use(function(error, request, response, next) {
   });
 });
 
-io.on("connection", function(socket) {
-  socket.on('chat message', function(message) {
-    console.log('message: ' + message);
-    io.emit('chat message', message);
-  });
-});
-
-// listen on port 3000
 server.listen(port, function() {
   console.log("Listening on port: " + port);
 });
